@@ -12,7 +12,21 @@
 <script src="script.js"></script>
 </head>
 <body>
-  <button class="theme-toggle" type="button" aria-label="Tungi rejim">🌙</button>
+  <!-- Yopishqoq menyu -->
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="logo" href="#">Amirxon</a>
+      <div class="nav-links">
+        <a href="#xizmatlar">Xizmatlar</a>
+        <a href="#ishlarim">Ishlarim</a>
+        <a href="#loyihalar">Loyihalar</a>
+        <a href="#fikrlar">Fikrlar</a>
+        <a href="#savollar">Savollar</a>
+        <a href="#aloqa">Aloqa</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Tungi rejim">🌙</button>
+    </div>
+  </nav>
 
   <!-- Hero -->
   <header class="hero">
@@ -38,7 +52,7 @@
   </header>
 
   <!-- Xizmatlar: har biri alohida bo'lim -->
-  <div class="wrap">
+  <div class="wrap" id="xizmatlar">
     <h2 class="section-title">Xizmatlar</h2>
   </div>
 
@@ -87,8 +101,32 @@
     </div>
   </section>
 
+  <!-- Ishlarim: rasm qo'shish uchun .work-img ichiga <img src="ish-1.jpg" alt="..."> yozing -->
+  <section class="works" id="ishlarim">
+    <div class="wrap">
+      <h2 class="section-title">Ishlarim</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="work-img"><span>Rasm o'rni</span></div>
+          <h4>[Ish nomi]</h4>
+          <p>[Qisqa izoh: bu qanday ish va nimasi bilan muhim.]</p>
+        </div>
+        <div class="card">
+          <div class="work-img"><span>Rasm o'rni</span></div>
+          <h4>[Ish nomi]</h4>
+          <p>[Qisqa izoh: bu qanday ish va nimasi bilan muhim.]</p>
+        </div>
+        <div class="card">
+          <div class="work-img"><span>Rasm o'rni</span></div>
+          <h4>[Ish nomi]</h4>
+          <p>[Qisqa izoh: bu qanday ish va nimasi bilan muhim.]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Loyihalarim: [qavs] ichidagi matnlarni o'zingiznikiga almashtiring -->
-  <section class="projects">
+  <section class="projects" id="loyihalar">
     <div class="wrap">
       <h2 class="section-title">Loyihalarim</h2>
       <div class="grid">
@@ -123,8 +161,63 @@
     </div>
   </section>
 
+  <!-- Mijozlar fikri: faqat haqiqiy mijozlar sharhlarini yozing -->
+  <section class="reviews" id="fikrlar">
+    <div class="wrap">
+      <h2 class="section-title">Mijozlar fikri</h2>
+      <div class="grid">
+        <figure class="card review">
+          <blockquote>[Sharh matni: mijoz natija haqida 1–2 jumla.]</blockquote>
+          <figcaption>
+            <span class="avatar"></span>
+            <div><b>[Mijoz ismi]</b><span>[Lavozimi, kompaniya]</span></div>
+          </figcaption>
+        </figure>
+        <figure class="card review">
+          <blockquote>[Sharh matni: mijoz natija haqida 1–2 jumla.]</blockquote>
+          <figcaption>
+            <span class="avatar"></span>
+            <div><b>[Mijoz ismi]</b><span>[Lavozimi, kompaniya]</span></div>
+          </figcaption>
+        </figure>
+        <figure class="card review">
+          <blockquote>[Sharh matni: mijoz natija haqida 1–2 jumla.]</blockquote>
+          <figcaption>
+            <span class="avatar"></span>
+            <div><b>[Mijoz ismi]</b><span>[Lavozimi, kompaniya]</span></div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Savol-javob: savol bosilganda javob ochiladi -->
+  <section class="faq" id="savollar">
+    <div class="wrap">
+      <h2 class="section-title">Savol-javob</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Ishni qanday boshlaymiz?</summary>
+          <p>Qo'ng'iroq qiling yoki Telegramda yozing. Avval biznesingiz, taklifingiz va hozirgi sotuv jarayoni haqida gaplashamiz, keyin aniq reja taklif qilaman.</p>
+        </details>
+        <details>
+          <summary>Natija qachon ko'rinadi?</summary>
+          <p>Birinchi lidlar reklama ishga tushgandan keyingi 7 kun ichida keladi. Keyingi haftalarda testlar orqali lid narxini tushirib, sifatini oshirib boramiz.</p>
+        </details>
+        <details>
+          <summary>Qaysi platformalarda ishlaysiz?</summary>
+          <p>Asosan Instagram va Facebook reklamasi bilan. Natijani har hafta hisobot qilib yuboraman: lid narxi, konversiya va ROI.</p>
+        </details>
+        <details>
+          <summary>Xizmat narxi qancha?</summary>
+          <p>[Narx va to'lov shartlarini shu yerga yozing.] Aniq hisob-kitob uchun bog'laning, biznesingizga qarab taklif beraman.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- Aloqa -->
-  <section class="contact-wrap">
+  <section class="contact-wrap" id="aloqa">
     <div class="wrap">
       <div class="contact">
         <h2>Loyihangizni muhokama qilamiz</h2>
