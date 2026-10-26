@@ -1,0 +1,243 @@
+/* Kunduzgi rejim */
+:root {
+  color-scheme: light;
+  --bg: #fbf6ef;
+  --card: #fffdf9;
+  --band: #f5ece0;
+  --text: #2a1f17;
+  --muted: #6f6257;
+  --line: #eee3d6;
+  --accent: #e2582f;
+  --accent-2: #f0a030;
+  --contact-bg: #2a1f17;
+  --contact-muted: #cdbcac;
+  --contact-line: #5a4637;
+}
+
+/* Tungi rejim: tizim sozlamasi bo'yicha yoki tugma orqali */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #17120e;
+    --card: #221a14;
+    --band: #1e1712;
+    --text: #f3e9df;
+    --muted: #b3a395;
+    --line: #362a21;
+    --accent: #f06a3f;
+    --accent-2: #f5b048;
+    --contact-bg: #2b2119;
+    --contact-muted: #c2b2a3;
+    --contact-line: #4d3c2f;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #17120e;
+  --card: #221a14;
+  --band: #1e1712;
+  --text: #f3e9df;
+  --muted: #b3a395;
+  --line: #362a21;
+  --accent: #f06a3f;
+  --accent-2: #f5b048;
+  --contact-bg: #2b2119;
+  --contact-muted: #c2b2a3;
+  --contact-line: #4d3c2f;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Manrope", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background .25s, color .25s;
+}
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+/* Rejim almashtirish tugmasi */
+.theme-toggle {
+  position: fixed; top: 16px; right: 16px; z-index: 10;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--card);
+  font-size: 20px; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .08);
+  transition: transform .15s;
+}
+.theme-toggle:hover { transform: scale(1.08); }
+
+/* Hero */
+.hero { padding: 88px 0 80px; }
+.hero-grid {
+  display: grid; gap: 48px; align-items: center;
+  grid-template-columns: 1.3fr 1fr;
+}
+.tag {
+  display: inline-block;
+  font-size: 14px; font-weight: 600;
+  color: var(--accent);
+  background: rgba(226, 88, 47, .08);
+  padding: 6px 14px; border-radius: 999px;
+  margin-bottom: 24px;
+}
+h1 {
+  font-size: clamp(48px, 8vw, 84px);
+  font-weight: 800; line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+h1 span {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+.about {
+  font-size: clamp(17px, 2.4vw, 20px);
+  color: var(--muted);
+  max-width: 560px;
+  margin: 24px 0 36px;
+}
+
+/* Rasm: photo.jpg bo'lmasa, "A" harfi ko'rinadi */
+.photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 24px 60px rgba(226, 88, 47, .22);
+}
+.photo img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+.photo-fallback {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  font-size: 120px; font-weight: 800;
+  color: rgba(255, 255, 255, .85);
+}
+
+/* Buttons */
+.btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 26px; border-radius: 12px;
+  font-weight: 700; font-size: 16px;
+  text-decoration: none;
+  transition: transform .15s, box-shadow .15s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-main {
+  background: var(--accent); color: #fff;
+  box-shadow: 0 8px 24px rgba(226, 88, 47, .28);
+}
+.btn-ghost {
+  background: var(--card); color: var(--text);
+  border: 1px solid var(--line);
+}
+
+/* Bo'lim sarlavhalari */
+.section-title {
+  font-size: clamp(30px, 5vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+}
+
+/* Xizmatlar */
+.service { padding: 64px 0; }
+.service.alt { background: var(--band); }
+.service-grid {
+  display: grid; gap: 40px; align-items: center;
+  grid-template-columns: 1.1fr 1fr;
+}
+.num {
+  font-size: 56px; font-weight: 800; line-height: 1;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  margin-bottom: 16px;
+}
+.service h3 { font-size: clamp(24px, 3.6vw, 32px); line-height: 1.2; margin-bottom: 12px; }
+.service p { color: var(--muted); font-size: 17px; max-width: 460px; }
+.points {
+  list-style: none;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 12px 28px;
+}
+.points li {
+  padding: 14px 0 14px 32px;
+  position: relative;
+  font-weight: 500;
+}
+.points li + li { border-top: 1px solid var(--line); }
+.points li::before {
+  content: "✓";
+  position: absolute; left: 0; top: 14px;
+  color: var(--accent); font-weight: 800;
+}
+
+/* Loyihalarim */
+.projects { padding: 88px 0 24px; }
+.grid {
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 28px;
+  display: flex; flex-direction: column;
+}
+.card-tag {
+  align-self: flex-start;
+  font-size: 13px; font-weight: 600;
+  color: var(--accent);
+  background: rgba(226, 88, 47, .08);
+  padding: 4px 12px; border-radius: 999px;
+  margin-bottom: 16px;
+}
+.card h4 { font-size: 20px; line-height: 1.3; margin-bottom: 8px; }
+.card p { color: var(--muted); font-size: 15px; margin-bottom: 24px; }
+.stats {
+  margin-top: auto;
+  display: flex; gap: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.stats b { display: block; font-size: 22px; font-weight: 800; }
+.stats span { font-size: 13px; color: var(--muted); }
+
+/* Contact */
+.contact-wrap { padding: 72px 0; }
+.contact {
+  background: var(--contact-bg); color: #fff;
+  border: 1px solid var(--contact-line);
+  border-radius: 24px;
+  padding: 48px 32px;
+  text-align: center;
+}
+.contact h2 { font-size: 28px; font-weight: 800; margin-bottom: 28px; }
+.contact .note { color: var(--contact-muted); margin-top: 20px; }
+.contact .btns { justify-content: center; }
+.contact .btn-ghost { background: transparent; color: #fff; border-color: var(--contact-line); }
+.phone { display: block; margin-top: 20px; font-size: 22px; font-weight: 700; color: #fff; text-decoration: none; }
+
+footer { text-align: center; color: var(--muted); font-size: 14px; padding: 0 0 40px; }
+
+@media (max-width: 760px) {
+  .hero { padding: 56px 0 48px; }
+  .hero-grid, .service-grid { grid-template-columns: 1fr; gap: 32px; }
+  .photo { max-width: 360px; width: 100%; }
+  .service { padding: 48px 0; }
+}
+@media (max-width: 520px) {
+  .btn { flex: 1; justify-content: center; padding: 14px 16px; white-space: nowrap; }
+  .contact { padding: 40px 20px; }
+}

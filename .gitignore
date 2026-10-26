@@ -1,0 +1,15 @@
+# Maxfiy kalitlar va sozlamalar
+.env
+.env.*
+
+# Mac tizim fayllari
+.DS_Store
+
+# Muharrir va Claude'ning lokal sozlamalari
+.vscode/
+.idea/
+.claude/
+
+# Paketlar va loglar
+node_modules/
+*.log
